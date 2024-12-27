@@ -1,0 +1,561 @@
+<odoo>
+    <record id="sicli_invoice_report" model="ir.actions.report">
+        <field name="name">sicli invoice report</field>
+        <field name="model">todo.task</field>
+        <field name="report_type">qweb-html</field>
+        <field name="binding_model_id" ref="model_todo_task"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">todo_app.sicli_invoice_report_template</field>
+    </record>
+    <template id="sicli_invoice_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="rec">
+                        <style>
+                            .table td {
+                            border: 1px solid black;
+                            }
+
+
+                            body {
+                            font-family: "Tajawal", sans-serif;
+                            height: auto;
+                            /* Let height be determined by content */
+                            width: 100%;
+                            margin: 0;
+                            }
+
+                            .col-12 {
+                            transform: translateX(75px);
+                            }
+
+
+                            .t-1 {
+                            border-collapse: collapse;
+                            box-sizing: border-box;
+                            width:350px ;
+                            height: 420px !important;
+                            }
+
+                            .t-2 {
+                            border-collapse: collapse;
+                            box-sizing: border-box;
+                            width: 350px;
+                            height: 420px !important;
+                            margin-left: 518px !important;
+                            margin-top: -430px;
+                            }
+
+                            th,
+                            td {
+                            border: 1px solid black;
+                            height: auto;
+                            text-align: center;
+                            font-weight: bold;
+                            font-size: 12px;
+                            width:auto;
+                            background-color: white;
+                            vertical-align: middle;
+                            }
+
+                            th {
+                            background-color:lightblue !important;
+                            }
+                            .t-2 td,
+                            .t-1 td{
+                            height: auto !important;
+                            vertical-align: middle;
+
+                            }
+
+                            .t-3 td{
+                            height: 40px !important;
+                            max-height:35px !important;
+                            vertical-align: middle;
+
+                            }
+
+
+                        </style>
+                        <div class="row" style="margin: 10px;  ">
+                            <div class="col-7">
+                                <h2>
+                                    <strong style=" background-color: lightblue; font-family:sans; margin-left:45px; !important;">
+                                        INVOICE VAT
+                                    </strong>
+                                </h2>
+                            </div>
+                            <div class="col-6" dir="rtl">
+                                <h2>
+                                    <strong style=" background-color: lightblue; font-family:sans; margin-left:80px; !important;">
+                                        فاتورة ضريبية
+                                    </strong>
+                                </h2>
+                            </div>
+                        </div>
+                        <table class="t-1">
+                            <colgroup>
+                                <col width='25%'/>
+                                <col width='30%'/>
+                                <col width='26%'/>
+                                <col width='30%'/>
+                            </colgroup>
+                            <tr>
+                                <td style="padding:10px !important;">Issue Date:</td>
+                                <td>2024-12-21</td>
+                                <td>٢٠٢٤/١٢/٢١</td>
+                                <td>تاريخ الإصدار</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:10px !important;">Invoice No.</td>
+                                <td colspan="2">01108</td>
+                                <td>رقم الفاتورة</td>
+
+                            </tr>
+                            <tr>
+                                <td style="padding:10px !important;"></td>
+                                <td colspan="2">من ٢- ٨- ٢٠٢٤ الی ٢.٤- ١- ٢٠٢٤</td>
+                                <td>تاريخ التوريد</td>
+
+                            </tr>
+                            <tr>
+                                <td style="padding:10px !important;">Delivery Date:</td>
+                                <td colspan="2">16-07-2024 TO 15-08-2024</td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <td style="padding:10px !important;">Contract No:</td>
+                                <td colspan="2">4400018455</td>
+                                <td>رقم العقد</td>
+
+                            </tr>
+                            <tr>
+                                <td style="padding:10px !important;"></td>
+                                <td colspan="2">عقد تاجير معدات الحريق ومشغليها</td>
+                                <td>اسم المشروع</td>
+
+                            </tr>
+                            <tr>
+                                <td style="padding:10px !important; font-size:10px !important;">Project Name:</td>
+                                <td colspan="2">Fire Fighting Equipment Operators Rental For PP13 PP14</td>
+                                <td></td>
+
+
+                            </tr>
+                            <tr>
+                                <td style="padding:10px !important;"></td>
+                                <td colspan="2">8501373275</td>
+                                <td>رقم الطلب</td>
+
+                            </tr>
+                            <tr>
+                                <td style="padding:10px !important;">Date of Order:</td>
+                                <td colspan="2">١٦- ٠٨-٢٠٢٤</td>
+                                <td>تاريخ اﻷمر</td>
+
+                            </tr>
+                            <tr>
+                                <td style="padding:10px !important; font-size:10px;">Name of Power Plant:</td>
+                                <td colspan="2" style=" font-size:10px;">محطة الثالثة عشر المناطق الوسطى</td>
+                                <td style=" font-size:10px;">اسم محطة توليد الكهرباء</td>
+
+                            </tr>
+                        </table>
+                        <table class="t-2">
+                            <colgroup>
+                                <col width='25%'/>
+                                <col width='50%'/>
+                                <col width='25%'/>
+
+
+                            </colgroup>
+                            <tr>
+                                <td></td>
+                                <td colspan="2"
+                                    style="text-align:center font-weight: bold;">شركه
+                                    سيكلي السعودية
+                                </td>
+                                <td style="text-align:right; padding:10px !important">:من</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; padding:10px !important;">From:</td>
+                                <td colspan="2" style="text-align:center; font-weight: bold;">Saudi Sicli Company</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align:center; font-weight: bold; font-size:8px !important;">
+                                    ص. ب. ١٦٠١٦ جدة ص. ب.
+                                    ١٦٠١٦ جدة ص. ب. ١٦٠١٦ جدة ص. ب. ١٦٠١٦ جدة ص. ب. ١٦٠١٦ جدة ص. ب. ١٦٠١٦ جدة ٢١٤٦٤
+                                </td>
+                                <td style="text-align:right; padding:10px !important">:العنوان</td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; padding:8px !important; ">Address:</td>
+                                <td colspan="2" style="text-align:center; font-weight: bold; font-size:8px !important;">
+                                    SP.O. Box 16016, Jeddah
+                                </td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; padding:10px !important;">VAT no:</td>
+                                <td colspan="2" style="text-align:center; font-weight: bold;">300011156156310</td>
+                                <td style="text-align:right; padding:10px !important">:الرقم الضريبي</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align:center; font-weight: bold;">الشركه السعودبة لكهرباء
+                                </td>
+                                <td style="text-align:right; padding:10px !important">الي</td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; padding:10px !important;">To:</td>
+                                <td colspan="2" style="text-align:center; font-weight: bold;">SAudi Electrical Company
+                                </td>
+                                <td></td>
+
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align:center; font-weight: bold;">الاداره العامة اداره
+                                    المراقبة الحاسبات المالية بجدة
+                                </td>
+                                <td style="text-align:right; padding:10px !important">العنوان</td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; padding:10px !important;">Address:</td>
+                                <td colspan="2" style="text-align:center; font-weight: bold;">Western operating area,p,o
+                                    box jeddah
+                                </td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; padding:10px !important;">VAT no:</td>
+                                <td colspan="2"
+                                    style="text-align:center; font-weight: bold; line-height:58px !important;">
+                                    300011156156310
+                                </td>
+                                <td style="text-align:right; font-size:10px; ">:الرقم الضريبي</td>
+
+                            </tr>
+                        </table>
+                        <table class="t-3" style="margin-top:20px; ">
+
+                            <colgroup>
+                                <col width="8%"/>
+                                <col width="9%"/>
+                                <col width="9%"/>
+                                <col width="10%"/>
+                                <col width="11%"/>
+                                <col width="8%"/>
+                                <col width="8%"/>
+                                <col width="5%"/>
+                                <col width="15%"/>
+                                <col width="11%"/>
+                                <col width="70%"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th style="font-size:9px;">المجموع شامل ضريبة القيمة المضافة</th>
+                                    <th style="font-size:9px;">ضريبة القيمة المضافة (ريال سعودي)</th>
+                                    <th>ضريبة القيمة المضافة % 15</th>
+                                    <th style="font-size:9px;">سعر الإجمالي غير شامل ضريبة القيمة المضافة</th>
+                                    <th>سعر الوحدة</th>
+                                    <th>الكمية</th>
+                                    <th>الوحدة</th>
+                                    <th style="font-size:9px;">تاريخ التوريد / فترة الإنجاز</th>
+                                    <th>وصف الصنف</th>
+                                    <th>رمز المنتج</th>
+                                    <th>الرقم</th>
+                                </tr>
+                                <tr>
+                                    <th>TOTAL (S.R)</th>
+                                    <th>VAT (S.R)</th>
+                                    <th>VAT % 15</th>
+                                    <th>Total Price without VAT</th>
+                                    <th>Unit Price</th>
+                                    <th>QTY</th>
+                                    <th>Unit</th>
+                                    <th style="font-size:9px;">Delivery Date / Progress Period</th>
+                                    <th>Item Description</th>
+                                    <th>Item No</th>
+                                    <th>No.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="9" style="text-align:right; font-weight: bold;">Services Jul 2024</td>
+                                    <td>10</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>58,180.80</td>
+                                    <td>7,588.80</td>
+                                    <td>15%</td>
+                                    <td>50,592.00</td>
+                                    <td>50,592.00</td>
+                                    <td>1.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td>Manpower
+                                        <br>العمالة</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>165,600.00</td>
+                                    <td>21,600.00</td>
+                                    <td>15%</td>
+                                    <td>144,000.00</td>
+                                    <td>36,000.00</td>
+                                    <td>4.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td>Manpower
+                                        <br>العمالة</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>579,600.00</td>
+                                    <td>75,600.00</td>
+                                    <td>15%</td>
+                                    <td>504,000.00</td>
+                                    <td>18,000.00</td>
+                                    <td>28.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td>Manpower
+                                        <br>العمالة</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>64,400.00</td>
+                                    <td>8,400.00</td>
+                                    <td>15%</td>
+                                    <td>56,000.00</td>
+                                    <td>14,000.00</td>
+                                    <td>4.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td>Manpower
+                                        <br>العمالة</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td style="vertical-align: middle !important; ">4</td>
+                                </tr>
+                                <tr>
+                                    <td>172,500.00</td>
+                                    <td>22,500.00</td>
+                                    <td>15%</td>
+                                    <td>150,000.00</td>
+                                    <td>75,000.00</td>
+                                    <td>2.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td>Fire Fighting Equipment
+                                        <br>معدات مكافحة الحريق</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>69,000.00</td>
+                                    <td>9,000.00</td>
+                                    <td>15%</td>
+                                    <td>60,000.00</td>
+                                    <td>60,000.00</td>
+                                    <td>1.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td>Fire Fighting Equipment
+                                        <br>معدات مكافحة الحريق</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td style="line-height:50px !important;">6</td>
+                                </tr>
+                                <tr>
+                                    <td>230,000.00</td>
+                                    <td>30,000.00</td>
+                                    <td>15%</td>
+                                    <td>200,000.00</td>
+                                    <td>200,000.00</td>
+                                    <td>1.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td style="line-height:2 !important;">Temporary Facility
+                                        <br>منشأة مؤقتة</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td style="line-height:50px !important;">7</td>
+                                </tr>
+                                <tr>
+                                    <td>7,590.00</td>
+                                    <td>990.00</td>
+                                    <td>15%</td>
+                                    <td>6,600.00</td>
+                                    <td>200.00</td>
+                                    <td>33.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td>Equipment
+                                        <br>معدات</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>2,656.50</td>
+                                    <td>346.50</td>
+                                    <td>15%</td>
+                                    <td>2,310.00</td>
+                                    <td>70.00</td>
+                                    <td>33.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td>Equipment
+                                        <br>معدات</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td>9</td>
+                                </tr>
+                                <tr style="line-height:10px !important;">
+                                    <td>2,656.50</td>
+                                    <td>346.50</td>
+                                    <td>15%</td>
+                                    <td>2,310.00</td>
+                                    <td>70.00</td>
+                                    <td>33.000</td>
+                                    <td>MON</td>
+                                    <td>-</td>
+                                    <td>Equipment
+                                        <br>معدات</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>4,324.00</td>
+                                    <td>564.00</td>
+                                    <td>15%</td>
+                                    <td>3,760.00</td>
+                                    <td>470.00</td>
+                                    <td>8.000</td>
+                                    <td>MON</td>
+                                    <td>16-07-2024 TO
+                                        <br>15-08-2024</br>
+                                    </td>
+                                    <td>Equipment
+                                        <br>معدات</br>
+                                    </td>
+                                    <td>-</td>
+                                    <td>11</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: left; font-weight: bold;">net amount of this
+                                        invoice
+                                    </td>
+                                    <td colspan="7" style="text-align: center;">1,316,938.00 ريال سعودي</td>
+                                    <td colspan="2" style="text-align: right; font-weight: bold;">صافي المبلغ لهذه
+                                        الفاتورة
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: left; font-weight: bold;">value added tax(15%
+                                        net)
+                                    </td>
+                                    <td colspan="7" style="text-align: center;">197,540.70 ريال سعودي</td>
+                                    <td colspan="2" style="text-align: right; font-weight: bold;">ضريبة القيمة المضافة
+                                        (15% من صافي المبلغ)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: left; font-weight: bold;">amount of this invoice
+                                        Included VAT:
+                                    </td>
+                                    <td colspan="7" style="text-align: center;">1,514,478.70 ريال سعودي</td>
+                                    <td colspan="2" style="text-align: right; font-weight: bold;">المبلغ لهذه الفاتورة
+                                        شامل ضريبة القيمة
+                                        المضافة
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: left; font-weight: bold;">Net amount Due in words
+                                        incl.VAT:
+                                    </td>
+                                    <td colspan="7" style="text-align: center; font-weight: bold;">
+                                        <p>one million five hundred fourteen thousand four hundred seventy-eight Riyal
+                                            and seventy Halala
+                                            Saudi Only
+                                        </p>
+                                    </td>
+                                    <td colspan="2" style="text-align: right; font-weight: bold;"/>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: right; font-weight: bold;"></td>
+                                    <td colspan="7" style="text-align: center; font-weight: bold;">
+                                        <p>فقط مليون وخمسمائة وأربعة عشر ألف وأربعمائة وثمانية وسبعون ريال وسبعون هللة
+                                            سعودي لا غير
+                                        </p>
+                                    </td>
+                                    <td colspan="2" style="text-align: right; font-weight: bold;">مبلغ الفاتوره شامل
+                                        ضريبه القميه المضاف
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: left;">
+                                        <p style="text-align: left;">Reciept By</p>
+                                        <p style="text-align: right;">اعدت بواسطه</p>
+                                    </td>
+                                    <td colspan="2" style="text-align: left;">
+                                        <p style="text-align: left;">Reviewed By</p>
+                                        <p style="text-align: right;">راجعتها</p>
+                                    </td>
+                                    <td colspan="4">
+                                        <p style="text-align: left;">Received By</p>
+                                        <p style="text-align: right;">المستلم</p>
+
+                                    </td>
+                                    <td colspan="3" style="text-align: left;">
+
+                                        <p style="text-align: right;">تم استلام البضاعه اعلاه كامله وبحاله جيده</p>
+                                        <p>Received the above goods complete and in good condition</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" style="text-align: left;  border-right: none;">
+                                        <p>Tel: (+966 12) 6372980 / 6355252</p>
+                                        <p>Fax: (+966 12) 6374321</p>
+                                        <p>P.O. Box 16016 Jeddah 21464 - K.S.A</p>
+                                    </td>
+                                    <td colspan="5" style="text-align:right; border-left: none;">
+                                        <p>هاتف: ٦٣٧٢٩٨٠ / ٦٣٦٥٢٥٢ (+٩٦٦ ١٢)</p>
+                                        <p>فاكس: ٦٣٧٤٣٢١ (+٩٦٦ ١٢)</p>
+                                        <p>ص.ب. ١٦١٦٤ جدة ٢١٤٦٤ - المملكة العربية السعودية</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
